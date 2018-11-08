@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
 
     <groupId>org.expath</groupId>
@@ -70,8 +70,8 @@
         <project.build.source>1.7</project.build.source>
         <project.build.target>1.7</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <saxon.version>9.6.0-7</saxon.version>
-        <xmlcalabash.version>1.1.9-96</xmlcalabash.version>
+        <saxon.version>9.7.0-15</saxon.version>
+        <xmlcalabash.version>1.1.15-97</xmlcalabash.version>
         <jing.version>20091111</jing.version>
         <xml.apis.version>1.4.01</xml.apis.version>
     </properties>
