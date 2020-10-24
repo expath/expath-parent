@@ -20,8 +20,8 @@
     <inceptionYear>2015</inceptionYear>
 
     <organization>
-        <name>EXPath</name>
-        <url>http://expath.org</url>
+        <name>The EXPath Project</name>
+        <url>http://www.expath.org</url>
     </organization>
 
     <developers>
@@ -36,7 +36,7 @@
             <name>Adam Retter</name>
             <email>adam@evolvedbinary.com</email>
             <organization>Evolved Binary</organization>
-            <organizationUrl>http://www.adamretter.org.uk</organizationUrl>
+            <organizationUrl>http://www.evolvedbinary.com</organizationUrl>
             <timezone>GMT</timezone>
         </developer>
     </developers>
