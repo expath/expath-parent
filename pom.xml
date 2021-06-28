@@ -304,10 +304,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <links>
-                        <link>http://www.expath.org</link>
-                        <link>http://www.w3.org/TR/xpath-30/</link>
-                    </links>
+                    <source>${project.build.source}</source>
                     <packagesheader>EXPath</packagesheader>
                     <doctitle>EXPath ${project.version}</doctitle>
                     <windowtitle>EXPath ${project.version}</windowtitle>
