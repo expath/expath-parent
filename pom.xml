@@ -71,7 +71,7 @@
         <project.build.target>1.8</project.build.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <saxon.version>10.3</saxon.version>
-        <xmlcalabash.version>1.2.5-99</xmlcalabash.version>
+        <xmlcalabash.version>1.5.2-110</xmlcalabash.version>
         <jing.version>20181222</jing.version>
         <xml.apis.version>1.4.01</xml.apis.version>
     </properties>
