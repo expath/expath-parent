@@ -74,7 +74,7 @@
         <xmlcalabash.version>1.5.7-120</xmlcalabash.version>
         <jing.version>20220510</jing.version>
         <xml.apis.version>1.4.01</xml.apis.version>
-        <slf4j.version>2.0.13</slf4j.version>
+        <slf4j.version>2.0.15</slf4j.version>
     </properties>
 
     <dependencyManagement>
