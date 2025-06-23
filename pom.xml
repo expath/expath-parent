@@ -10,12 +10,12 @@
     <name>EXPath Parent POM</name>
 
     <description>The base POM for all EXPath modules.</description>
-    <url>http://expath.org</url>
+    <url>https://www.expath.org</url>
     <inceptionYear>2015</inceptionYear>
 
     <organization>
         <name>The EXPath Project</name>
-        <url>http://www.expath.org</url>
+        <url>https://www.expath.org</url>
     </organization>
 
     <developers>
@@ -23,14 +23,14 @@
             <name>Florent Georges</name>
             <email>fgeorges@fgeorges.org</email>
             <organization>H2O Consulting</organization>
-            <organizationUrl>http://fgeorges.org</organizationUrl>
+            <organizationUrl>https://fgeorges.org</organizationUrl>
             <timezone>CET</timezone>
         </developer>
         <developer>
             <name>Adam Retter</name>
             <email>adam@evolvedbinary.com</email>
             <organization>Evolved Binary</organization>
-            <organizationUrl>http://www.evolvedbinary.com</organizationUrl>
+            <organizationUrl>https://www.evolvedbinary.com</organizationUrl>
             <timezone>GMT</timezone>
         </developer>
     </developers>
@@ -38,7 +38,7 @@
     <licenses>
         <license>
             <name>MOZILLA PUBLIC LICENSE Version 1.0</name>
-            <url>http://www.mozilla.org/MPL/1.0/</url>
+            <url>https://www.mozilla.org/MPL/1.0/</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -56,7 +56,7 @@
             <post>expath@googlegroups.com</post>
             <subscribe>expath+subscribe@googlegroups.com</subscribe>
             <unsubscribe>expath+unsubscribe@googlegroups.com</unsubscribe>
-            <archive>http://groups.google.co.uk/group/expath</archive>
+            <archive>https://groups.google.co.uk/group/expath</archive>
         </mailingList>
     </mailingLists>
 
@@ -295,7 +295,7 @@
                     <windowtitle>EXPath ${project.version}</windowtitle>
                     <bottom>
                         <![CDATA[
-                            Copyright &copy; ${project.inceptionYear}-{currentYear} <a href="http://www.expath.org">EXPath</a>. All Rights Reserved
+                            Copyright &copy; ${project.inceptionYear}-{currentYear} <a href="https://www.expath.org">EXPath</a>. All Rights Reserved
                         ]]>
                     </bottom>
                     <archive>
@@ -340,11 +340,11 @@
     <pluginRepositories>
         <pluginRepository>
             <id>sonatype-releases</id>
-            <url>http://oss.sonatype.org/content/repositories/releases</url>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
         </pluginRepository>
         <pluginRepository>
             <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
+            <url>https://clojars.org/repo</url>
         </pluginRepository>
     </pluginRepositories>
 
