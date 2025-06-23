@@ -184,6 +184,12 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>3.1.1</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.7.0</version>
+                    <extensions>true</extensions>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -332,6 +338,16 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
                     <releaseProfiles>expath-release-sign-artifacts</releaseProfiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <deploymentName>${project.artifactId}</deploymentName>
+                    <failOnBuildFailure>true</failOnBuildFailure>
+                    <waitUntil>validated</waitUntil>
                 </configuration>
             </plugin>
         </plugins>
