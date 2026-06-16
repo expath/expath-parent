@@ -69,6 +69,9 @@
         <jing.version>20241231</jing.version>
         <xml.apis.version>1.4.02</xml.apis.version>
         <slf4j.version>2.0.17</slf4j.version>
+
+        <project.build.outputTimestamp>2026-06-16T11:23:59Z</project.build.outputTimestamp>
+
     </properties>
 
     <dependencyManagement>
@@ -137,57 +140,57 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>maven-dependency-plugin</artifactId>
-		            <version>3.8.1</version>
+		            <version>3.11.0</version>
 		        </plugin>
                 <plugin>
-                    <groupId>com.code54.mojo</groupId>
-                    <artifactId>buildversion-plugin</artifactId>
-                    <version>1.0.3</version>
+                    <groupId>com.evolvedbinary.maven.plugins</groupId>
+                    <artifactId>buildversion-maven-plugin</artifactId>
+                    <version>2.0.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.14.0</version>
+                    <version>3.15.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.4.2</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.4.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.3</version>
+                    <version>3.5.6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.11.2</version>
+                    <version>3.12.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>3.2.7</version>
+                    <version>3.2.8</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.central</groupId>
                     <artifactId>central-publishing-maven-plugin</artifactId>
-                    <version>0.7.0</version>
+                    <version>0.10.0</version>
                     <extensions>true</extensions>
                 </plugin>
             </plugins>
@@ -210,8 +213,8 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.code54.mojo</groupId>
-                <artifactId>buildversion-plugin</artifactId>
+                <groupId>com.evolvedbinary.maven.plugins</groupId>
+                <artifactId>buildversion-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -252,7 +255,7 @@
                             <Git-Commit-Abbrev>${build-commit-abbrev}</Git-Commit-Abbrev>
                             <Git-Commit-Timestamp>${build-tstamp}</Git-Commit-Timestamp>
                             <Build-Version>${build-version}</Build-Version>
-                            <Build-Timestamp>${maven.build.timestamp}</Build-Timestamp>
+                            <Build-Timestamp>${project.build.outputTimestamp}</Build-Timestamp>
                             <Source-Repository>${project.scm.connection}</Source-Repository>
                             <Description>${project.description}</Description>
                             <Implementation-URL>${project.url}</Implementation-URL>
@@ -275,7 +278,7 @@
                             <Git-Commit-Abbrev>${build-commit-abbrev}</Git-Commit-Abbrev>
                             <Git-Commit-Timestamp>${build-tstamp}</Git-Commit-Timestamp>
                             <Build-Version>${build-version}</Build-Version>
-                            <Build-Timestamp>${maven.build.timestamp}</Build-Timestamp>
+                            <Build-Timestamp>${project.build.outputTimestamp}</Build-Timestamp>
                             <Source-Repository>${project.scm.connection}</Source-Repository>
                             <Description>${project.description}</Description>
                             <Implementation-URL>${project.url}</Implementation-URL>
@@ -315,7 +318,7 @@
                             <Git-Commit-Abbrev>${build-commit-abbrev}</Git-Commit-Abbrev>
                             <Git-Commit-Timestamp>${build-tstamp}</Git-Commit-Timestamp>
                             <Build-Version>${build-version}</Build-Version>
-                            <Build-Timestamp>${maven.build.timestamp}</Build-Timestamp>
+                            <Build-Timestamp>${project.build.outputTimestamp}</Build-Timestamp>
                             <Source-Repository>${project.scm.connection}</Source-Repository>
                             <Description>${project.description}</Description>
                             <Implementation-URL>${project.url}</Implementation-URL>
@@ -337,17 +340,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
-                    <releaseProfiles>expath-release-sign-artifacts</releaseProfiles>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
-                <configuration>
-                    <publishingServerId>central</publishingServerId>
-                    <deploymentName>${project.artifactId}</deploymentName>
-                    <failOnBuildFailure>true</failOnBuildFailure>
-                    <waitUntil>validated</waitUntil>
+                    <releaseProfiles>expath-release</releaseProfiles>
                 </configuration>
             </plugin>
         </plugins>
@@ -358,15 +351,11 @@
             <id>sonatype-releases</id>
             <url>https://oss.sonatype.org/content/repositories/releases</url>
         </pluginRepository>
-        <pluginRepository>
-            <id>clojars.org</id>
-            <url>https://clojars.org/repo</url>
-        </pluginRepository>
     </pluginRepositories>
 
     <profiles>
         <profile>
-            <id>expath-release-sign-artifacts</id>
+            <id>expath-release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -381,6 +370,16 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <deploymentName>${project.artifactId}-${project.version}</deploymentName>
+                            <failOnBuildFailure>true</failOnBuildFailure>
+                            <waitUntil>validated</waitUntil>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
